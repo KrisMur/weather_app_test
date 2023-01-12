@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCity } from '../../../redux/citySlice';
+import api from '../../../utils/apiInfo';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import './AddCityForm.css'
 
 const AddCityForm = () => {
-  const api = {
-   key: 'b5fe7a6b601177cebe9479d2888cd303',
-    baseUrl: 'https://api.openweathermap.org/data/2.5/'
-  }
-
   const [value, setValue] = useState('');
   const dispatchFunction = useDispatch();
 

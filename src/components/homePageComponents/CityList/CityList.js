@@ -3,15 +3,10 @@ import CityItem from '../CityItem/CityItem'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { addCity } from '../../../redux/citySlice';
+import api from '../../../utils/apiInfo';
 import Grid from '@mui/material/Grid';
 
 const CityList = () => {
-
-  const api = {
-    key: 'b5fe7a6b601177cebe9479d2888cd303',
-    baseUrl: 'https://api.openweathermap.org/data/2.5/'
-  }
-
   const dispatchFunction = useDispatch();
 
   const GetDayWeather = (inputCity) => {
@@ -32,7 +27,6 @@ const CityList = () => {
     const myStorage = Object.values(localStorage);
     myStorage.forEach(element => GetDayWeather(element));
   }
-  
 
   return (
     <Grid container spacing={2}>
