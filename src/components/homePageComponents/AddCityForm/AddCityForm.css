@@ -1,0 +1,10 @@
+.FormActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 5%;
+}
+
+.FormText {
+  width: 100%;
+}
