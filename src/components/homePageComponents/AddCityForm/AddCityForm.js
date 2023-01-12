@@ -12,7 +12,12 @@ const AddCityForm = () => {
 
   const GetDayWeather = (inputCity) => {
     fetch(`${api.baseUrl}weather?q=${inputCity}&units=metric&APPID=${api.key}`)
-      .then(res => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error('Неможливо отримати дані для цього міста.Провірте правильнсть написання');
+      })
       .then(result => {
         dispatchFunction(
           addCity({
@@ -22,7 +27,10 @@ const AddCityForm = () => {
           localStorage.setItem(inputCity, inputCity)
         );
       })
-
+      .catch((error) => {
+        window.confirm(error)
+        });
+    
     setValue('')
   };
 

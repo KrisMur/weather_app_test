@@ -22,8 +22,8 @@ const CityItem = ({ id, title, weather }) => {
           addWeather({
             weather: result,
           })
-        );
-      });
+        )
+      })
   };
 
   const handleDeleteClick = () => {
