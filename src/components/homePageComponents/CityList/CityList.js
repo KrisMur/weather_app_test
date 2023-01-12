@@ -22,6 +22,7 @@ const CityList = () => {
       })
   };
 
+
   const cities = useSelector((state) => state.cities)
   if (cities.length === 0) {
     const myStorage = Object.values(localStorage);

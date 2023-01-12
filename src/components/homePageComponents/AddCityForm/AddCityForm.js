@@ -35,6 +35,7 @@ const AddCityForm = () => {
     if (!value) {
       return window.confirm("Місто не введено")
     } else if (localStorage.getItem(value)) {
+      setValue('')
       return window.confirm("Місто вже існує")
     } else {
       
